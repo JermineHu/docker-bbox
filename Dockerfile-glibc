@@ -4,6 +4,6 @@ COPY --from=busybox:glibc /bin/busybox /bin/busybox
 COPY --from=busybox:glibc /lib/ld-linux-x86-64.so.2 /lib/ld-linux-x86-64.so.2
 COPY --from=busybox:glibc /lib/libm.so.6 /lib/libm.so.6
 COPY --from=busybox:glibc /lib/libc.so.6 /lib/libc.so.6
-ADD lib64 /
+ADD lib64.tar.gz /
 RUN ["busybox" ,"sh","/init-bin.sh"]
 CMD ["sh"]

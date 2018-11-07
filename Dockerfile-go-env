@@ -1,0 +1,5 @@
+FROM busybox:glibc
+ENV VERSION 1.10
+COPY init-env.sh init-env.sh
+RUN ["sh","/init-env.sh"]
+CMD ["sh"]

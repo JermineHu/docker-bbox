@@ -18,3 +18,20 @@ runsvdir -P /www/runit/service
 docker run -d -v `pwd`:/www jermine/bbox runsvdir -P /www/runit/service
 
 ```
+
+### Docker, runit, and graceful termination
+
+The following code  shoud be in Dockerfile CMD line with run.sh file.
+
+```sh
+
+#!/bin/sh
+
+exec /sbin/runsvdir /etc/service
+```
+
+#### links
+
+https://peter.bourgon.org/blog/2015/09/24/docker-runit-and-graceful-termination.html
+
+https://github.com/tozd/docker-runit/blob/master/runsvdir-start
